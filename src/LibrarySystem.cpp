@@ -13,9 +13,12 @@ LibrarySystem::~LibrarySystem() {
 }
 
 bool LibrarySystem::initializeDatabase() {
-    if (!db->connect("localhost", "root", "oskmITB24", "library_system")) {
+    if (!db->connect("localhost", "root", "", "library_system")) {
         throw std::runtime_error("Failed to connect to database");
     }
+
+    // Create all necessary tables
+    db->createTables();
 
     // Create default librarian if none exists
     return createDefaultLibrarian();

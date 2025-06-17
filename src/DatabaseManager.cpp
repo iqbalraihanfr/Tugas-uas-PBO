@@ -36,6 +36,16 @@ bool DatabaseManager::isConnected() const {
 }
 
 void DatabaseManager::createTables() {
+    // Create librarians table
+    std::string librariansTable = "CREATE TABLE IF NOT EXISTS librarians ("
+                                "id INT AUTO_INCREMENT PRIMARY KEY,"
+                                "username VARCHAR(255) UNIQUE NOT NULL,"
+                                "password VARCHAR(255) NOT NULL,"
+                                "name VARCHAR(255) NOT NULL,"
+                                "email VARCHAR(255) UNIQUE NOT NULL,"
+                                "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
+                                ")";
+    
     // Create books table
     std::string booksTable = "CREATE TABLE IF NOT EXISTS books ("
                             "id INT AUTO_INCREMENT PRIMARY KEY,"
@@ -68,6 +78,7 @@ void DatabaseManager::createTables() {
                                    "FOREIGN KEY (member_id) REFERENCES members(id)"
                                    ")";
     
+    executeQuery(librariansTable);
     executeQuery(booksTable);
     executeQuery(membersTable);
     executeQuery(transactionsTable);

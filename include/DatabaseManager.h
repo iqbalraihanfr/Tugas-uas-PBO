@@ -19,7 +19,6 @@ private:
 
     // Private methods
     void initializeDatabase();
-    void createTables();
     void checkConnection();
 
 public:
@@ -40,6 +39,7 @@ public:
     std::string escapeString(const std::string& str);
     
     // Table operations
+    void createTables();
     bool createTable(const std::string& tableName, const std::string& columns);
     bool insertRecord(const std::string& table, const std::string& columns, const std::string& values);
     bool updateRecord(const std::string& table, const std::string& setClause, const std::string& whereClause);
