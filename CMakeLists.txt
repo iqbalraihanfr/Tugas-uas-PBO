@@ -5,10 +5,18 @@ project(library_management)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# MySQL paths for macOS with Homebrew
-set(MYSQL_INCLUDE_DIR "/opt/homebrew/include/mysql")
-set(MYSQL_LIB_DIR "/opt/homebrew/lib")
-set(MYSQL_LIBRARIES "/opt/homebrew/lib/libmysqlclient.dylib")
+# Platform-specific MySQL configuration
+if(WIN32)
+    # Windows MySQL paths - adjust these paths according to your MySQL installation
+    set(MYSQL_INCLUDE_DIR "C:/Program Files/MySQL/MySQL Server 8.0/include")
+    set(MYSQL_LIB_DIR "C:/Program Files/MySQL/MySQL Server 8.0/lib")
+    set(MYSQL_LIBRARIES "libmysql")
+elseif(APPLE)
+    # macOS MySQL paths with Homebrew
+    set(MYSQL_INCLUDE_DIR "/opt/homebrew/include/mysql")
+    set(MYSQL_LIB_DIR "/opt/homebrew/lib")
+    set(MYSQL_LIBRARIES "/opt/homebrew/lib/libmysqlclient.dylib")
+endif()
 
 # Include directories
 include_directories(
