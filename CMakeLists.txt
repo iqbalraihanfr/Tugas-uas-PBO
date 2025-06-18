@@ -1,6 +1,5 @@
-
 cmake_minimum_required(VERSION 3.10)
-project(library_management)
+project(library_schema)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -30,19 +29,20 @@ include_directories(
 )
 
 # Add executable
-add_executable(library_management
+add_executable(library_schema
     src/main.cpp
     src/DatabaseManager.cpp
-    src/Book.cpp
-    src/Member.cpp
-    src/LoanTransaction.cpp
-    src/Librarian.cpp
-    src/LibrarySystem.cpp
     src/Menu.cpp
+    src/Admin.cpp
+    src/Anggota.cpp
+    src/Pengguna.cpp
+    src/Buku.cpp
+    src/Peminjaman.cpp
+    src/Denda.cpp
 )
 
 # Link libraries
-target_link_libraries(library_management
+target_link_libraries(library_schema
     ${MYSQL_LIBRARIES}
 )
 

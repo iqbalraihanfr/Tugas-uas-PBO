@@ -8,13 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/raihaaniqbal/uasPBO/src/Book.cpp" "CMakeFiles/library_management.dir/src/Book.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Book.cpp.o.d"
+  "/Users/raihaaniqbal/uasPBO/src/Admin.cpp" "CMakeFiles/library_management.dir/src/Admin.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Admin.cpp.o.d"
+  "/Users/raihaaniqbal/uasPBO/src/Anggota.cpp" "CMakeFiles/library_management.dir/src/Anggota.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Anggota.cpp.o.d"
+  "/Users/raihaaniqbal/uasPBO/src/Buku.cpp" "CMakeFiles/library_management.dir/src/Buku.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Buku.cpp.o.d"
   "/Users/raihaaniqbal/uasPBO/src/DatabaseManager.cpp" "CMakeFiles/library_management.dir/src/DatabaseManager.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/DatabaseManager.cpp.o.d"
-  "/Users/raihaaniqbal/uasPBO/src/Librarian.cpp" "CMakeFiles/library_management.dir/src/Librarian.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Librarian.cpp.o.d"
-  "/Users/raihaaniqbal/uasPBO/src/LibrarySystem.cpp" "CMakeFiles/library_management.dir/src/LibrarySystem.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/LibrarySystem.cpp.o.d"
-  "/Users/raihaaniqbal/uasPBO/src/LoanTransaction.cpp" "CMakeFiles/library_management.dir/src/LoanTransaction.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/LoanTransaction.cpp.o.d"
-  "/Users/raihaaniqbal/uasPBO/src/Member.cpp" "CMakeFiles/library_management.dir/src/Member.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Member.cpp.o.d"
+  "/Users/raihaaniqbal/uasPBO/src/Denda.cpp" "CMakeFiles/library_management.dir/src/Denda.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Denda.cpp.o.d"
   "/Users/raihaaniqbal/uasPBO/src/Menu.cpp" "CMakeFiles/library_management.dir/src/Menu.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Menu.cpp.o.d"
+  "/Users/raihaaniqbal/uasPBO/src/Peminjaman.cpp" "CMakeFiles/library_management.dir/src/Peminjaman.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Peminjaman.cpp.o.d"
+  "/Users/raihaaniqbal/uasPBO/src/Pengguna.cpp" "CMakeFiles/library_management.dir/src/Pengguna.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/Pengguna.cpp.o.d"
   "/Users/raihaaniqbal/uasPBO/src/main.cpp" "CMakeFiles/library_management.dir/src/main.cpp.o" "gcc" "CMakeFiles/library_management.dir/src/main.cpp.o.d"
   )
 

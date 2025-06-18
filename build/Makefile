@@ -117,48 +117,96 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named library_management
+# Target rules for targets named library_schema
 
 # Build rule for target.
-library_management: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library_management
-.PHONY : library_management
+library_schema: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library_schema
+.PHONY : library_schema
 
 # fast build rule for target.
-library_management/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/build
-.PHONY : library_management/fast
+library_schema/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/build
+.PHONY : library_schema/fast
 
-src/Book.o: src/Book.cpp.o
-.PHONY : src/Book.o
+src/Admin.o: src/Admin.cpp.o
+.PHONY : src/Admin.o
 
 # target to build an object file
-src/Book.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Book.cpp.o
-.PHONY : src/Book.cpp.o
+src/Admin.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Admin.cpp.o
+.PHONY : src/Admin.cpp.o
 
-src/Book.i: src/Book.cpp.i
-.PHONY : src/Book.i
+src/Admin.i: src/Admin.cpp.i
+.PHONY : src/Admin.i
 
 # target to preprocess a source file
-src/Book.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Book.cpp.i
-.PHONY : src/Book.cpp.i
+src/Admin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Admin.cpp.i
+.PHONY : src/Admin.cpp.i
 
-src/Book.s: src/Book.cpp.s
-.PHONY : src/Book.s
+src/Admin.s: src/Admin.cpp.s
+.PHONY : src/Admin.s
 
 # target to generate assembly for a file
-src/Book.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Book.cpp.s
-.PHONY : src/Book.cpp.s
+src/Admin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Admin.cpp.s
+.PHONY : src/Admin.cpp.s
+
+src/Anggota.o: src/Anggota.cpp.o
+.PHONY : src/Anggota.o
+
+# target to build an object file
+src/Anggota.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Anggota.cpp.o
+.PHONY : src/Anggota.cpp.o
+
+src/Anggota.i: src/Anggota.cpp.i
+.PHONY : src/Anggota.i
+
+# target to preprocess a source file
+src/Anggota.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Anggota.cpp.i
+.PHONY : src/Anggota.cpp.i
+
+src/Anggota.s: src/Anggota.cpp.s
+.PHONY : src/Anggota.s
+
+# target to generate assembly for a file
+src/Anggota.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Anggota.cpp.s
+.PHONY : src/Anggota.cpp.s
+
+src/Buku.o: src/Buku.cpp.o
+.PHONY : src/Buku.o
+
+# target to build an object file
+src/Buku.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Buku.cpp.o
+.PHONY : src/Buku.cpp.o
+
+src/Buku.i: src/Buku.cpp.i
+.PHONY : src/Buku.i
+
+# target to preprocess a source file
+src/Buku.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Buku.cpp.i
+.PHONY : src/Buku.cpp.i
+
+src/Buku.s: src/Buku.cpp.s
+.PHONY : src/Buku.s
+
+# target to generate assembly for a file
+src/Buku.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Buku.cpp.s
+.PHONY : src/Buku.cpp.s
 
 src/DatabaseManager.o: src/DatabaseManager.cpp.o
 .PHONY : src/DatabaseManager.o
 
 # target to build an object file
 src/DatabaseManager.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/DatabaseManager.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/DatabaseManager.cpp.o
 .PHONY : src/DatabaseManager.cpp.o
 
 src/DatabaseManager.i: src/DatabaseManager.cpp.i
@@ -166,7 +214,7 @@ src/DatabaseManager.i: src/DatabaseManager.cpp.i
 
 # target to preprocess a source file
 src/DatabaseManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/DatabaseManager.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/DatabaseManager.cpp.i
 .PHONY : src/DatabaseManager.cpp.i
 
 src/DatabaseManager.s: src/DatabaseManager.cpp.s
@@ -174,111 +222,39 @@ src/DatabaseManager.s: src/DatabaseManager.cpp.s
 
 # target to generate assembly for a file
 src/DatabaseManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/DatabaseManager.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/DatabaseManager.cpp.s
 .PHONY : src/DatabaseManager.cpp.s
 
-src/Librarian.o: src/Librarian.cpp.o
-.PHONY : src/Librarian.o
+src/Denda.o: src/Denda.cpp.o
+.PHONY : src/Denda.o
 
 # target to build an object file
-src/Librarian.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Librarian.cpp.o
-.PHONY : src/Librarian.cpp.o
+src/Denda.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Denda.cpp.o
+.PHONY : src/Denda.cpp.o
 
-src/Librarian.i: src/Librarian.cpp.i
-.PHONY : src/Librarian.i
-
-# target to preprocess a source file
-src/Librarian.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Librarian.cpp.i
-.PHONY : src/Librarian.cpp.i
-
-src/Librarian.s: src/Librarian.cpp.s
-.PHONY : src/Librarian.s
-
-# target to generate assembly for a file
-src/Librarian.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Librarian.cpp.s
-.PHONY : src/Librarian.cpp.s
-
-src/LibrarySystem.o: src/LibrarySystem.cpp.o
-.PHONY : src/LibrarySystem.o
-
-# target to build an object file
-src/LibrarySystem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/LibrarySystem.cpp.o
-.PHONY : src/LibrarySystem.cpp.o
-
-src/LibrarySystem.i: src/LibrarySystem.cpp.i
-.PHONY : src/LibrarySystem.i
+src/Denda.i: src/Denda.cpp.i
+.PHONY : src/Denda.i
 
 # target to preprocess a source file
-src/LibrarySystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/LibrarySystem.cpp.i
-.PHONY : src/LibrarySystem.cpp.i
+src/Denda.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Denda.cpp.i
+.PHONY : src/Denda.cpp.i
 
-src/LibrarySystem.s: src/LibrarySystem.cpp.s
-.PHONY : src/LibrarySystem.s
-
-# target to generate assembly for a file
-src/LibrarySystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/LibrarySystem.cpp.s
-.PHONY : src/LibrarySystem.cpp.s
-
-src/LoanTransaction.o: src/LoanTransaction.cpp.o
-.PHONY : src/LoanTransaction.o
-
-# target to build an object file
-src/LoanTransaction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/LoanTransaction.cpp.o
-.PHONY : src/LoanTransaction.cpp.o
-
-src/LoanTransaction.i: src/LoanTransaction.cpp.i
-.PHONY : src/LoanTransaction.i
-
-# target to preprocess a source file
-src/LoanTransaction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/LoanTransaction.cpp.i
-.PHONY : src/LoanTransaction.cpp.i
-
-src/LoanTransaction.s: src/LoanTransaction.cpp.s
-.PHONY : src/LoanTransaction.s
+src/Denda.s: src/Denda.cpp.s
+.PHONY : src/Denda.s
 
 # target to generate assembly for a file
-src/LoanTransaction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/LoanTransaction.cpp.s
-.PHONY : src/LoanTransaction.cpp.s
-
-src/Member.o: src/Member.cpp.o
-.PHONY : src/Member.o
-
-# target to build an object file
-src/Member.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Member.cpp.o
-.PHONY : src/Member.cpp.o
-
-src/Member.i: src/Member.cpp.i
-.PHONY : src/Member.i
-
-# target to preprocess a source file
-src/Member.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Member.cpp.i
-.PHONY : src/Member.cpp.i
-
-src/Member.s: src/Member.cpp.s
-.PHONY : src/Member.s
-
-# target to generate assembly for a file
-src/Member.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Member.cpp.s
-.PHONY : src/Member.cpp.s
+src/Denda.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Denda.cpp.s
+.PHONY : src/Denda.cpp.s
 
 src/Menu.o: src/Menu.cpp.o
 .PHONY : src/Menu.o
 
 # target to build an object file
 src/Menu.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Menu.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Menu.cpp.o
 .PHONY : src/Menu.cpp.o
 
 src/Menu.i: src/Menu.cpp.i
@@ -286,7 +262,7 @@ src/Menu.i: src/Menu.cpp.i
 
 # target to preprocess a source file
 src/Menu.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Menu.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Menu.cpp.i
 .PHONY : src/Menu.cpp.i
 
 src/Menu.s: src/Menu.cpp.s
@@ -294,15 +270,63 @@ src/Menu.s: src/Menu.cpp.s
 
 # target to generate assembly for a file
 src/Menu.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/Menu.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Menu.cpp.s
 .PHONY : src/Menu.cpp.s
+
+src/Peminjaman.o: src/Peminjaman.cpp.o
+.PHONY : src/Peminjaman.o
+
+# target to build an object file
+src/Peminjaman.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Peminjaman.cpp.o
+.PHONY : src/Peminjaman.cpp.o
+
+src/Peminjaman.i: src/Peminjaman.cpp.i
+.PHONY : src/Peminjaman.i
+
+# target to preprocess a source file
+src/Peminjaman.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Peminjaman.cpp.i
+.PHONY : src/Peminjaman.cpp.i
+
+src/Peminjaman.s: src/Peminjaman.cpp.s
+.PHONY : src/Peminjaman.s
+
+# target to generate assembly for a file
+src/Peminjaman.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Peminjaman.cpp.s
+.PHONY : src/Peminjaman.cpp.s
+
+src/Pengguna.o: src/Pengguna.cpp.o
+.PHONY : src/Pengguna.o
+
+# target to build an object file
+src/Pengguna.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Pengguna.cpp.o
+.PHONY : src/Pengguna.cpp.o
+
+src/Pengguna.i: src/Pengguna.cpp.i
+.PHONY : src/Pengguna.i
+
+# target to preprocess a source file
+src/Pengguna.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Pengguna.cpp.i
+.PHONY : src/Pengguna.cpp.i
+
+src/Pengguna.s: src/Pengguna.cpp.s
+.PHONY : src/Pengguna.s
+
+# target to generate assembly for a file
+src/Pengguna.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/Pengguna.cpp.s
+.PHONY : src/Pengguna.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -310,7 +334,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -318,7 +342,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_management.dir/build.make CMakeFiles/library_management.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library_schema.dir/build.make CMakeFiles/library_schema.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -329,28 +353,31 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... library_management"
-	@echo "... src/Book.o"
-	@echo "... src/Book.i"
-	@echo "... src/Book.s"
+	@echo "... library_schema"
+	@echo "... src/Admin.o"
+	@echo "... src/Admin.i"
+	@echo "... src/Admin.s"
+	@echo "... src/Anggota.o"
+	@echo "... src/Anggota.i"
+	@echo "... src/Anggota.s"
+	@echo "... src/Buku.o"
+	@echo "... src/Buku.i"
+	@echo "... src/Buku.s"
 	@echo "... src/DatabaseManager.o"
 	@echo "... src/DatabaseManager.i"
 	@echo "... src/DatabaseManager.s"
-	@echo "... src/Librarian.o"
-	@echo "... src/Librarian.i"
-	@echo "... src/Librarian.s"
-	@echo "... src/LibrarySystem.o"
-	@echo "... src/LibrarySystem.i"
-	@echo "... src/LibrarySystem.s"
-	@echo "... src/LoanTransaction.o"
-	@echo "... src/LoanTransaction.i"
-	@echo "... src/LoanTransaction.s"
-	@echo "... src/Member.o"
-	@echo "... src/Member.i"
-	@echo "... src/Member.s"
+	@echo "... src/Denda.o"
+	@echo "... src/Denda.i"
+	@echo "... src/Denda.s"
 	@echo "... src/Menu.o"
 	@echo "... src/Menu.i"
 	@echo "... src/Menu.s"
+	@echo "... src/Peminjaman.o"
+	@echo "... src/Peminjaman.i"
+	@echo "... src/Peminjaman.s"
+	@echo "... src/Pengguna.o"
+	@echo "... src/Pengguna.i"
+	@echo "... src/Pengguna.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -146,7 +146,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=library_management
+CMAKE_PROJECT_NAME:STATIC=library_schema
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -214,13 +214,13 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-library_management_BINARY_DIR:STATIC=/Users/raihaaniqbal/uasPBO/build
+library_schema_BINARY_DIR:STATIC=/Users/raihaaniqbal/uasPBO/build
 
 //Value Computed by CMake
-library_management_IS_TOP_LEVEL:STATIC=ON
+library_schema_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-library_management_SOURCE_DIR:STATIC=/Users/raihaaniqbal/uasPBO
+library_schema_SOURCE_DIR:STATIC=/Users/raihaaniqbal/uasPBO
 
 
 ########################

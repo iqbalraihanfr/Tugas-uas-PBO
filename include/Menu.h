@@ -1,13 +1,17 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include "LibrarySystem.h"
+#include "Admin.h"
+#include "Anggota.h"
+#include "DatabaseManager.h"
 #include <string>
 #include <vector>
 
 class Menu {
 private:
-    LibrarySystem* system;
+    Admin* admin;
+    Anggota* anggota;
+    DatabaseManager* db;
     bool running;
 
     // Helper methods
@@ -50,8 +54,11 @@ private:
     void exportToCSV();
 
 public:
-    Menu(LibrarySystem* system);
+    Menu(Admin* admin);
+    Menu(Anggota* anggota);
     void run();
+    void runAdminMenu();
+    void runAnggotaMenu();
 };
 
 #endif // MENU_H 
