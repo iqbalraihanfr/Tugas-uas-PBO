@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/raihaaniqbal/uasPBO/include -I/opt/homebrew/include/mysql
 
-CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
+CXX_FLAGSarm64 =  -I/opt/homebrew/include -std=gnu++17 -arch arm64
 
-CXX_FLAGS = -std=gnu++17 -arch arm64
+CXX_FLAGS =  -I/opt/homebrew/include -std=gnu++17 -arch arm64
 
