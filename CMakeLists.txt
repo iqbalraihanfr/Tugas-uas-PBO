@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.10)
 project(library_management)
 
@@ -16,6 +17,10 @@ elseif(APPLE)
     set(MYSQL_INCLUDE_DIR "/opt/homebrew/include/mysql")
     set(MYSQL_LIB_DIR "/opt/homebrew/lib")
     set(MYSQL_LIBRARIES "/opt/homebrew/lib/libmysqlclient.dylib")
+    
+    # Add compiler flags for macOS
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I/opt/homebrew/include")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -L/opt/homebrew/lib")
 endif()
 
 # Include directories

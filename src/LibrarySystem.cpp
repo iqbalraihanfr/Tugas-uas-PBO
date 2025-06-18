@@ -13,7 +13,7 @@ LibrarySystem::~LibrarySystem() {
 }
 
 bool LibrarySystem::initializeDatabase() {
-    if (!db->connect("localhost", "root", "", "library_system")) {
+    if (!db->connect("localhost", "library_user", "library123", "library_management")) {
         throw std::runtime_error("Failed to connect to database");
     }
 
@@ -29,7 +29,7 @@ bool LibrarySystem::createDefaultLibrarian() {
     std::string query = "SELECT COUNT(*) FROM librarians";
     MYSQL_RES* result = db->executeSelect(query);
     if (result) {
-        MYSQL_ROW row = mysql_fetch_row(result);
+        MYSQL_ROW row = mysql_fetch_row(result);    
         if (row && std::stoi(row[0]) == 0) {
             // Create default librarian
             Librarian librarian(db.get(), "admin", "admin123", "Administrator", "admin@library.com");

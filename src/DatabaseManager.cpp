@@ -6,6 +6,14 @@ DatabaseManager::DatabaseManager() : conn(nullptr), connected(false) {
     if (!conn) {
         throw std::runtime_error("Failed to initialize MySQL connection");
     }
+    
+    // Set connection timeout
+    int timeout = 10;
+    mysql_options(conn, MYSQL_OPT_CONNECT_TIMEOUT, &timeout);
+    
+    // Enable auto-reconnect
+    bool reconnect = true;
+    mysql_options(conn, MYSQL_OPT_RECONNECT, &reconnect);
 }
 
 DatabaseManager::~DatabaseManager() {
@@ -14,12 +22,24 @@ DatabaseManager::~DatabaseManager() {
 
 bool DatabaseManager::connect(const std::string& host, const std::string& user, 
                             const std::string& password, const std::string& database) {
-    if (!mysql_real_connect(conn, host.c_str(), user.c_str(), password.c_str(),
-                           database.c_str(), 0, nullptr, 0)) {
+    if (!conn) {
+        std::cerr << "MySQL connection not initialized" << std::endl;
         return false;
     }
     
+    // Try to connect with socket first (for local connections)
+    if (!mysql_real_connect(conn, host.c_str(), user.c_str(), password.c_str(),
+                           database.c_str(), 0, "/tmp/mysql.sock", 0)) {
+        // If socket connection fails, try TCP connection
+        if (!mysql_real_connect(conn, host.c_str(), user.c_str(), password.c_str(),
+                               database.c_str(), 3306, nullptr, 0)) {
+            std::cerr << "Failed to connect to MySQL: " << mysql_error(conn) << std::endl;
+            return false;
+        }
+    }
+    
     connected = true;
+    std::cout << "Successfully connected to MySQL database: " << database << std::endl;
     return true;
 }
 
@@ -51,8 +71,8 @@ void DatabaseManager::createTables() {
                             "id INT AUTO_INCREMENT PRIMARY KEY,"
                             "title VARCHAR(255) NOT NULL,"
                             "author VARCHAR(255) NOT NULL,"
-                            "year INT,"
-                            "category VARCHAR(100),"
+                            "isbn VARCHAR(255),"
+                            "quantity INT,"
                             "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
                             ")";
     
