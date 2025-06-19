@@ -12,15 +12,18 @@ class Anggota : public Pengguna {
 private:
     DatabaseManager* db;
     std::vector<Buku> wishlist;
+    void tampilkanBukuTersedia() const;
 public:
     Anggota();
     Anggota(const std::string& id, const std::string& nama, const std::string& username, const std::string& password, DatabaseManager* db = nullptr);
     void setDatabase(DatabaseManager* db);
     std::vector<Buku> getWishlist() const;
     void tambahKeWishlist();
+    void lihatWishlist();
     void cariBuku();
     bool pinjamBuku();
     bool kembalikanBuku();
+    
 };
 
 #endif // ANGGOTA_H 

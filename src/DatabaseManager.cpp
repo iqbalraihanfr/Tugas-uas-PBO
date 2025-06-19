@@ -292,7 +292,7 @@ std::vector<int> DatabaseManager::getWishlist(int id_anggota) {
 bool DatabaseManager::pinjamBuku(int id_buku, const std::string& id_anggota) {
     if (!conn) return false;
     // Check if book is available
-    std::string check = "SELECT status FROM buku WHERE id = " + std::to_string(id_buku);
+    std::string check = "SELECT status_ketersediaan FROM buku WHERE id_buku = " + std::to_string(id_buku);
     if (mysql_query(conn, check.c_str()) == 0) {
         MYSQL_RES* res = mysql_store_result(conn);
         if (res) {
@@ -308,7 +308,7 @@ bool DatabaseManager::pinjamBuku(int id_buku, const std::string& id_anggota) {
     std::string query = "INSERT INTO peminjaman (id_buku, id_anggota, tanggal_pinjam, status) VALUES (" + std::to_string(id_buku) + ", '" + id_anggota + "', CURDATE(), 'dipinjam')";
     if (mysql_query(conn, query.c_str()) != 0) return false;
     // Update book status
-    std::string update = "UPDATE buku SET status = 'dipinjam' WHERE id = " + std::to_string(id_buku);
+    std::string update = "UPDATE buku SET status_ketersediaan = 'dipinjam' WHERE id_buku = " + std::to_string(id_buku);
     if (mysql_query(conn, update.c_str()) != 0) return false;
     return true;
 }
@@ -331,7 +331,7 @@ bool DatabaseManager::kembalikanBuku(int id_peminjaman) {
     std::string update = "UPDATE peminjaman SET status = 'kembali', tanggal_kembali = CURDATE() WHERE id = " + std::to_string(id_peminjaman);
     if (mysql_query(conn, update.c_str()) != 0) return false;
     // Update buku
-    std::string updateBuku = "UPDATE buku SET status = 'tersedia' WHERE id = " + std::to_string(id_buku);
+    std::string updateBuku = "UPDATE buku SET status_ketersediaan = 'tersedia' WHERE id_buku = " + std::to_string(id_buku);
     if (mysql_query(conn, updateBuku.c_str()) != 0) return false;
     return true;
 }
@@ -341,4 +341,17 @@ bool DatabaseManager::tambahWishlist(const std::string& id_anggota, int id_buku)
     std::string query = "INSERT INTO wishlist (id_anggota, id_buku) VALUES ('" + id_anggota + "', " + std::to_string(id_buku) + ")";
     if (mysql_query(conn, query.c_str()) != 0) return false;
     return true;
+}
+
+std::vector<std::vector<std::string>> DatabaseManager::getAvailableBuku() {
+    std::vector<std::vector<std::string>> resultVec;
+    std::string query = "SELECT id_buku, judul, penulis, status_ketersediaan FROM buku WHERE status_ketersediaan = 'tersedia'";
+    MYSQL_RES* result = executeSelect(query);
+    if (!result) return resultVec;
+    MYSQL_ROW row;
+    while ((row = mysql_fetch_row(result))) {
+        resultVec.push_back({row[0], row[1], row[2], row[3]});
+    }
+    mysql_free_result(result);
+    return resultVec;
 } 

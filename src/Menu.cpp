@@ -88,10 +88,10 @@ void Menu::runAnggotaMenu() {
         std::cout << "0. Logout\n";
         int choice = getIntInput("Pilih menu: ");
         switch (choice) {
-            case 1: anggota->cariBuku(); break;
-            case 2: anggota->pinjamBuku(); break;
-            case 3: anggota->kembalikanBuku(); break;
-            case 4: anggota->tambahKeWishlist(); break;
+            case 1: anggota->cariBuku(); waitForKey(); break;
+            case 2: anggota->pinjamBuku(); waitForKey(); break;
+            case 3: anggota->kembalikanBuku(); waitForKey(); break;
+            case 4: anggota->tambahKeWishlist(); waitForKey(); break;
             case 0: running = false; break;
             default: std::cout << "Pilihan tidak valid\n"; waitForKey();
         }

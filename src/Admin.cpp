@@ -11,6 +11,11 @@ void Admin::setDatabase(DatabaseManager* db) {
 }
 
 void Admin::tambahBuku() {
+    // Cek apakah tabel buku kosong
+    auto books = db->getAllBuku();
+    if (books.empty()) {
+        db->executeQuery("ALTER TABLE buku AUTO_INCREMENT = 1;");
+    }
     std::string judul, penulis;
     std::cout << "Judul: "; std::getline(std::cin, judul);
     std::cout << "Penulis: "; std::getline(std::cin, penulis);

@@ -55,6 +55,7 @@ public:
     bool deleteBuku(int id_buku);
     std::vector<std::vector<std::string>> searchBuku(const std::string& keyword);
     std::vector<std::vector<std::string>> getAllBuku();
+    std::vector<std::vector<std::string>> getAvailableBuku();
 
     // CRUD for peminjaman
     bool insertPeminjaman(int id_buku, int id_anggota, const std::string& tanggal_pinjam, const std::string& tanggal_kembali, const std::string& status);
